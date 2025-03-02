@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import CSS for toast
+
 
 const Form = () => {
 
@@ -11,11 +14,14 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        toast.success("Registration Successful!");
         console.log(formData)
+        
     }
 
     const handleReset = () => {
 
+        
         setFormData({
             name:'',
             email:'',
@@ -24,6 +30,9 @@ const Form = () => {
         })
     }
 
+    useEffect(() => {
+
+    },[])
   return (
     
     <div class="row justify-content-center">
@@ -61,6 +70,7 @@ const Form = () => {
             </form>
         </div>
     </div>
+    <ToastContainer/>
 </div>
 
   )
